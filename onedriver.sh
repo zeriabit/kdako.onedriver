@@ -8,30 +8,41 @@ COMMAND="${1:-state}"
 MOUNT_POINT="${HOME}/OneDrive"
 
 case "$COMMAND" in
-  state)
-    installed=false
-    mounted=false
-    if command -v onedriver >/dev/null 2>&1; then
-      installed=true
-    fi
-    if mountpoint -q "$MOUNT_POINT" 2>/dev/null; then
-      mounted=true
-    fi
-    echo "installed=$installed"
-    echo "mounted=$mounted"
-    ;;
-  install)
-    echo "Installing onedriver from AUR..."
-    if command -v yay >/dev/null 2>&1; then
-      yay -S --noconfirm onedriver
-    elif command -v paru >/dev/null 2>&1; then
-      paru -S --noconfirm onedriver
-    else
-      echo "ERROR: No AUR helper found (yay or paru required)" >&2
-      exit 1
-    fi
-    ;;
-  mount)
+state)
+  installed=false
+  mounted=false
+  if command -v onedriver >/dev/null 2>&1; then
+    installed=true
+  fi
+  if mountpoint -q "$MOUNT_POINT" 2>/dev/null; then
+    mounted=true
+  fi
+  echo "installed=$installed"
+  echo "mounted=$mounted"
+  ;;
+install)
+  echo "Installing onedriver from AUR..."
+  if command -v yay >/dev/null 2>&1; then
+    yay -S --noconfirm onedriver
+  elif command -v paru >/dev/null 2>&1; then
+    paru -S --noconfirm onedriver
+  else
+    echo "ERROR: No AUR helper found (yay or paru required)" >&2
+    exit 1
+  fi
+  ;;
+remove)
+  echo "Removing onedriver from AUR..."
+  if command -v yay >/dev/null 2>&1; then
+    yay -Rns --noconfirm onedriver
+  elif command -v paru >/dev/null 2>&1; then
+    paru -Rns --noconfirm onedriver
+  else
+    echo "ERROR: No AUR helper found (yay or paru required)" >&2
+    exit 1
+  fi
+  ;;
+mount)
     if ! command -v onedriver >/dev/null 2>&1; then
       echo "ERROR: onedriver not installed" >&2
       exit 1

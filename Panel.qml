@@ -47,6 +47,7 @@ Panel {
   }
 
   function install() { runInTerminal([script, "install"]) }
+  function remove() { runInTerminal([script, "remove"]) }
 
   function mount() { runInTerminal([script, "mount"]) }
 
@@ -187,6 +188,21 @@ Panel {
             foreground: root.foreground
             fontFamily: root.fontFamily
             onClicked: root.mount()
+          }
+
+          PanelSeparator {
+            visible: true
+            foreground: root.foreground
+          }
+
+          Button {
+            width: parent.width
+            iconText: "󰆴"
+            text: "Remove from AUR"
+            foreground: root.urgent
+            fontFamily: root.fontFamily
+            fontSize: Style.font.bodySmall
+            onClicked: root.remove()
           }
         }
 
