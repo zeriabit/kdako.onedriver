@@ -1,4 +1,4 @@
-# kdako.onedriver — OneDriver Omarchy Bar Plugin
+# kdako.onedriver -- OneDriver Omarchy Bar Plugin
 
 Manages the [onedriver](https://aur.archlinux.org/packages/onedriver/) AUR package
 (a FUSE filesystem for Microsoft OneDrive) from the Omarchy bar.
@@ -9,7 +9,7 @@ Manages the [onedriver](https://aur.archlinux.org/packages/onedriver/) AUR packa
   mounted at `~/OneDrive`.
 - Installs `onedriver` from the AUR (requires `yay` or `paru`).
 - Mounts / unmounts your OneDrive filesystem.
-- **Browse files** — open the panel to browse, rename, and delete files and
+- **Browse files** -- open the panel to browse, rename, and delete files and
   folders on your local OneDrive mount.
 
 ## Install
@@ -32,11 +32,11 @@ Then click the OneDriver icon in the bar and follow the panel.
 
 When OneDrive is mounted, the panel shows a file browser for `~/OneDrive`:
 
-- **Navigate** — click a folder to open it, or use **Up** to go to the parent.
-- **Breadcrumb** — shows your path inside OneDrive; click any segment to jump.
-- **Rename** — right-click a folder, type a new name, press Enter.
-- **Delete** — right-click a file or folder and confirm.
-- **Refresh** — the list refreshes automatically every 5 seconds while open.
+- **Navigate** -- click a folder to open it, or use **Up** to go to the parent.
+- **Breadcrumb** -- shows your path inside OneDrive; click any segment to jump.
+- **Rename** -- right-click a folder, type a new name, press Enter.
+- **Delete** -- right-click a file or folder and confirm.
+- **Refresh** -- the list refreshes automatically every 5 seconds while open.
 
 ## Mount point
 

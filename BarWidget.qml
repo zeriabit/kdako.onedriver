@@ -17,7 +17,7 @@ Panel {
   property bool mounted: false
   property bool open: false
 
-  readonly property string glyph: mounted ? "󰋩" : (installed ? "󰋩" : "󱘝")
+  readonly property string glyph: mounted ? "[OD]" : (installed ? "[OD]" : "[ND]")
   readonly property string statusText: {
     if (!installed) return "Not installed"
     if (mounted) return "Mounted"

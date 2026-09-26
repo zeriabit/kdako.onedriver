@@ -13,7 +13,7 @@ Item {
 
   readonly property bool installed: panel.barWidget ? panel.barWidget.installed : false
   readonly property bool mounted: panel.barWidget ? panel.barWidget.mounted : false
-  readonly property string glyph: mounted ? "󰋩" : (installed ? "󰋩" : "󱘝")
+  readonly property string glyph: mounted ? "[OD]" : (installed ? "[OD]" : "[ND]")
   readonly property string statusText: {
     if (!installed) return "Not installed"
     if (mounted) return "Mounted"
@@ -162,7 +162,7 @@ Item {
       Hint { text: "The onedriver AUR package is not installed. It provides a FUSE filesystem for Microsoft OneDrive. An AUR helper (yay or paru) is required." }
       Button {
         width: parent.width
-        iconText: "󰏗"
+        iconText: "[F]"
         text: "Install from AUR"
         bordered: true
         foreground: foreground
@@ -180,7 +180,7 @@ Item {
       Hint { text: "onedriver is installed but not running. Mount it to access your OneDrive at ~/OneDrive." }
       Button {
         width: parent.width
-        iconText: "󰋩"
+        iconText: "[OD]"
         text: "Mount OneDrive"
         bordered: true
         foreground: foreground
@@ -195,7 +195,7 @@ Item {
 
       Button {
         width: parent.width
-        iconText: "󰆴"
+        iconText: "[F]"
         text: "Remove from AUR"
         foreground: urgent
         fontFamily: fontFamily
@@ -217,7 +217,7 @@ Item {
         opacity: 1.0
 
         Text {
-          text: "󰋩"
+          text: "[OD]"
           color: foreground
           font.family: fontFamily
           font.pixelSize: 14
@@ -243,7 +243,7 @@ Item {
       // Up button
       Button {
         width: parent.width
-        iconText: "↑"
+        iconText: "Up"
         text: "Up"
         enabled: currentPath !== mountPoint
         foreground: enabled ? foreground : dim
@@ -286,7 +286,7 @@ Item {
 
           Text {
             id: icon
-            text: modelData.t === "folder" ? "󰉋" : "󰈙"
+            text: modelData.t === "folder" ? "[F]" : "[F]"
             color: modelData.t === "folder" ? foreground : dim
             font.family: fontFamily
             font.pixelSize: 16
@@ -353,7 +353,7 @@ Item {
 
       Text {
         visible: listing
-        text: "Loading…"
+        text: "Loading..."
         color: dim
         font.family: fontFamily
         font.pixelSize: Style.font.bodySmall
@@ -380,7 +380,7 @@ Item {
           width: parent.width - parent.spacing
           text: confirmDelete
             ? "Confirm delete: " + confirmDeleteTarget
-            : "Right-click a folder to rename · Right-click a file to delete"
+            : "Right-click a folder to rename . Right-click a file to delete"
           enabled: !confirmDelete
           foreground: confirmDelete ? urgent : foreground
           fontFamily: fontFamily
@@ -468,7 +468,7 @@ Item {
 
     Button {
       width: 46
-      text: "×"
+      text: "x"
       foreground: dim
       fontFamily: fontFamily
       font.pixelSize: Style.font.body
