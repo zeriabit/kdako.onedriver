@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "kdako.onedriver",
+  "name": "OneDriver",
+  "version": "1.0.0",
+  "author": "kdako",
+  "license": "MIT",
+  "description": "Install, mount, unmount, and browse the onedriver AUR package (FUSE OneDrive filesystem) from the Omarchy bar.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "OneDriver",
+    "description": "Manage the onedriver AUR package: install, mount, unmount, and browse OneDrive files at ~/OneDrive from the Omarchy bar.",
+    "category": "Cloud storage",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
