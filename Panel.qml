@@ -257,7 +257,8 @@ Item {
           color: contentDim
           font.family: contentFontFamily
           font.pixelSize: Style.font.bodySmall
-          Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+          x: parent.width - 72
+          y: 6
         }
       }
 
