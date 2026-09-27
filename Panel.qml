@@ -280,6 +280,7 @@ Item {
             color: modelData.t === "folder" ? contentForeground : contentDim
             font.family: contentFontFamily
             font.pixelSize: 16
+            textFormat: Text.PlainText
             x: 6
             y: 6
           }
