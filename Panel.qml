@@ -222,6 +222,7 @@ Item {
             color: contentForeground
             font.family: contentFontFamily
             font.pixelSize: Style.font.bodySmall
+            textFormat: Text.PlainText
             elide: Text.ElideRight
           }
           Rectangle {
@@ -288,6 +289,7 @@ Item {
             color: contentForeground
             font.family: contentFontFamily
             font.pixelSize: Style.font.body
+            textFormat: Text.PlainText
             x: icon.x + icon.width + 6
             y: 5
             elide: Text.ElideRight
@@ -298,6 +300,7 @@ Item {
             color: contentDim
             font.family: contentFontFamily
             font.pixelSize: Style.font.bodySmall
+            textFormat: Text.PlainText
             x: parent.width - 72
             y: 6
           }
@@ -426,6 +429,7 @@ Item {
       color: contentForeground
       font.family: contentFontFamily
       font.pixelSize: Style.font.bodySmall
+      textFormat: Text.PlainText
     }
 
     TextField {
