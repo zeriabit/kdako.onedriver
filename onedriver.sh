@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# onedriver — helper script for the kdako.onedriver Omarchy bar widget.
+# onedriver -- helper script for the kdako.onedriver Omarchy bar widget.
 #
 # Commands:
 #   state      -> prints "installed=true/false" and "mounted=true/false"
