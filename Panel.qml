@@ -6,6 +6,7 @@ import qs.Commons
 import qs.Ui
 
 Item {
+  id: panel
   property var barWidget: null
 
   readonly property string script: barWidget ? barWidget.script : ""
@@ -91,7 +92,8 @@ Item {
   function confirmRename() {
     if (renameNewName && renameNewName !== "" && renameNewName !== renameTarget) {
       var fullPath = currentPath + "/" + renameTarget
-      barWidget.runInTerminal([script, "rename", fullPath, renameNewName])
+      var newPath = currentPath.substring(0, currentPath.lastIndexOf("/")) + "/" + renameNewName
+      barWidget.runInTerminal([script, "rename", fullPath, newPath])
     }
     renameTarget = ""
     renameNewName = ""
@@ -146,6 +148,7 @@ Item {
           color: contentForeground
           font.family: contentFontFamily
           font.pixelSize: Style.font.display
+          textFormat: Text.PlainText
         }
       }
     }
@@ -316,15 +319,15 @@ Item {
             onClicked: {
               if (modelData.t === "folder") {
                 var child = currentPath + "/" + modelData.n
-                panel.currentPath = child
-                panel.refreshList()
+                currentPath = child
+                refreshList()
               }
             }
             onDoubleClicked: {
               if (modelData.t === "folder") {
                 var child = currentPath + "/" + modelData.n
-                panel.currentPath = child
-                panel.refreshList()
+                currentPath = child
+                refreshList()
               }
             }
             onPressed: function(b) {

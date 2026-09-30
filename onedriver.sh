@@ -201,10 +201,16 @@ cmd_rename() {
     fi
     local real_old
     real_old="$(readlink -f "$old" 2>/dev/null || echo "$old")"
+    local real_new
+    real_new="$(readlink -f "$new" 2>/dev/null || echo "$new")"
     local real_mount
     real_mount="$(readlink -f "$MOUNT_POINT" 2>/dev/null || echo "$MOUNT_POINT")"
     if [ "${real_old#"$real_mount"}" = "$real_old" ]; then
         echo "refusing to rename outside $MOUNT_POINT: $old" >&2
+        exit 1
+    fi
+    if [ "${real_new#"$real_mount"}" = "$real_new" ]; then
+        echo "refusing to rename destination outside $MOUNT_POINT: $new" >&2
         exit 1
     fi
     if [ ! -e "$old" ]; then
